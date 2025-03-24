@@ -7,6 +7,7 @@ import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import { FilePenIcon } from "lucide-react";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -126,6 +127,15 @@ const menuGroups = [
           //   { label: "Form Layout", route: "/forms/form-layout" },
           // ],
         },
+        {
+          icon: (
+            <FilePenIcon />
+          ),
+          label: "Blog",
+          route: "/blog",
+          
+        },
+
 
 
         {

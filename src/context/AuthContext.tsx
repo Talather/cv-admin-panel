@@ -51,16 +51,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                     } else {
                         console.error("User document does not exist in Firestore");
                         setAuthState({ user: null, isAuthenticated: false });
-                        router.push('/auth/signin');
+                        // router.push('/auth/signin');
                     }
                 } catch (error) {
                     console.error("Error fetching user data:", error);
                     setAuthState({ user: null, isAuthenticated: false });
-                    router.push('/auth/signin');
+                    // router.push('/auth/signin');
                 }
             } else {
                 setAuthState({ user: null, isAuthenticated: false });
-                router.push('/auth/signin');
+                // router.push('/auth/signin');
             }
             setLoading(false);
         });

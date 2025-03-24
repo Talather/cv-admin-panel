@@ -1,6 +1,7 @@
 import LayoutContent from "@/components/LayoutComponent";
 import { AuthProvider } from "@/context/AuthContext";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "CV-LITE",
@@ -22,6 +23,7 @@ export default function RootLayout({
           <LayoutContent>
             {children}
           </LayoutContent>
+          <Toaster />
         </AuthProvider>
       </body>
     </html>
