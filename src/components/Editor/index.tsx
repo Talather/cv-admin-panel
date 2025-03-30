@@ -139,7 +139,7 @@ const Editor = ({
   return (
     <RichTextEditor
       output="html"
-      content={content}
+      content={`${content}`}
       onChangeContent={onChangeContent}
       extensions={extensions}
     />

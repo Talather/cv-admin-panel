@@ -19,5 +19,5 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 export { db, auth };
-export const storage = getStorage(app);
+export const storage = getStorage(app, "gs://optimcv1.firebasestorage.app");
 export default app;
