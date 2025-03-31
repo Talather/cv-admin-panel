@@ -464,3 +464,61 @@ input[type="search"]::-webkit-search-cancel-button {
 .custom-gradient-1 {
     background-image: linear-gradient(145deg, #EEF 0%, #FFF8FC 100%);;
 }
+
+
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 100px;
+    position: relative;
+}
+
+.prose [style*="text-align"] {
+    scroll-margin-top: 100px !important;
+}
+
+.blog-main{
+    color: black;
+}
+
+.blog-main h2, .blog-main h3, .blog-main h4, .blog-main p {
+    padding-bottom: 1.4rem;
+}
+
+.blog-main h2, .blog-main h3, .blog-main h4{
+    font-weight: bold;
+}
+
+
+.blog-main p{
+    font-size: 1.1rem;
+}
+
+.blog-main strong{
+    color:#07142b;
+}
+
+.blog-main h2 {
+    font-size: 2.2rem;
+    color:#07142b;
+    line-height: 60px !important;
+}
+
+.blog-main h3 {
+    font-size: 1.5rem;
+    color:#07142b;
+}
+
+.blog-main ul{
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+.blog-main ol{
+    list-style: decimal;
+    margin-left: 1.5rem;
+}
+
+.blog-main img{
+    border-radius:  1rem;
+    margin-bottom: 1.4rem;
+}
