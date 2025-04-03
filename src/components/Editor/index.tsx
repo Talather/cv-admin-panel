@@ -1,4 +1,6 @@
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { uploadImage } from "@/lib/blog/firebase";
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import RichTextEditor from "reactjs-tiptap-editor";
 import {
@@ -125,6 +127,22 @@ const extensions = [
   }),
 ];
 
+const useForceColorMode = () => {
+  const [colorMode] = useLocalStorage("color-theme", "light");
+
+  useEffect(() => {
+    const htmlClasses = window.document.documentElement.classList;
+    if (colorMode === "dark") {
+      htmlClasses.add("dark");
+    } else {
+      htmlClasses.remove("dark");
+    }
+  }, [colorMode]);
+
+  return colorMode;
+};
+
+
 const Editor = ({
   content,
   onChange,
@@ -132,6 +150,7 @@ const Editor = ({
   content: string;
   onChange: (content: string) => void;
 }) => {
+  const colorMode = useForceColorMode();
   const onChangeContent = (value: string) => {
     onChange(value);
   };

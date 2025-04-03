@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { blogPostsCollection } from "@/lib/blog/firebase";
 import type { BlogPost } from "@/types/blog";
 import BlogCardGrid from "@/components/BlogCardGrid";
+import CreateBlog from "@/components/CreateBlog";
 
 async function BlogList() {
   const snapshot = await getDocs(blogPostsCollection);
@@ -55,15 +56,16 @@ export default function BlogPage() {
               your content.
             </p>
           </div>
-          <Link
-            href="/blog/form"
-            className="mb-2 me-2 md:w-fit w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-          >
-            Create New Post
-          </Link>
+          <CreateBlog />
         </div>
 
-        <Suspense fallback={<BeatLoader size={10} className="mt-4" />}>
+        <Suspense
+          fallback={
+            <div className="flex w-full items-center justify-center ">
+              <BeatLoader size={10} className="mt-4 " />
+            </div>
+          }
+        >
           <BlogList />
         </Suspense>
       </div>
