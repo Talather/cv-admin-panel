@@ -115,7 +115,6 @@ export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
     }
   };
 
-  console.log(previewImage);
 
   return (
     <div className="rounded-[10px] bg-white p-4 shadow-1 dark:bg-gray-dark dark:shadow-card ">
