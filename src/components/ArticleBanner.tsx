@@ -25,46 +25,55 @@ export default function ArticleBanner({
   updatedAt,
 }: Props) {
   return (
-    <section className="w-full pt-8  mx-auto bg-gradient-to-b from-[#30d0ad]/20 to-[#fff]  py-10">
+    <section className="mx-auto w-full  bg-gradient-to-b from-[#30d0ad]/20 to-[#fff] py-10  pt-8">
       <div className="  mx-auto px-2 md:px-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="font-medium">
-          <div className="flex flex-wrap items-center  text-black">
-            <Link href="/blog" className="hover:underline text-platformGreen">
-              Home
-            </Link>
-            <span className="mx-2">&gt;</span>
-            <Link href="/blog" className="hover:underline text-platformGreen">
-              Blog
-            </Link>
-            <span className="mx-2">&gt;</span>
-            <Link href={"blog"} className="capitalize text-platformGreen hover:underline">
-              {category?.replace(/-/g, " ")}
-            </Link>
-            <span className="mx-2">&gt;</span>
-            <span className="font-normal text-gray-700">{title}</span>
-          </div>
-        </nav>
-
         <div className="grid items-center gap-14 lg:grid-cols-3">
           {/* Left side - Title and content */}
           <div className="space-y-6 md:col-span-2">
             {/* Title */}
-            <h1  className="text-3xl font-bold leading-[40px] mt-3 md:mt-0 md:leading-[60px] text-gray-700 sm:text-4xl md:text-5xl">
+            <h1 className="mt-3 text-3xl font-bold leading-[40px] text-gray-700 sm:text-4xl md:mt-0 md:text-5xl md:leading-[60px]">
               {title}
             </h1>
+            {/* Breadcrumb Navigation */}
+            <nav className="font-medium">
+              <div className="flex flex-wrap items-center  text-[#30d0ad]">
+                <Link
+                  href="/blog"
+                  className="text-platformGreen hover:underline"
+                >
+                  Home
+                </Link>
+                <span className="mx-2">&gt;</span>
+                <Link
+                  href="/blog"
+                  className="text-platformGreen hover:underline"
+                >
+                  Blog
+                </Link>
+                <span className="mx-2">&gt;</span>
+                <Link
+                  href={"blog"}
+                  className="text-platformGreen capitalize hover:underline"
+                >
+                  {category?.replace(/-/g, " ")}
+                </Link>
+                <span className="mx-2">&gt;</span>
+                <span className="font-normal text-gray-700">{title}</span>
+              </div>
+            </nav>
 
             {/* Subheadline */}
-            <p className="md:text-xl text-lg text-gray-700/90">{description}</p>
+            <p className="text-lg text-gray-700/90 md:text-xl">{description}</p>
 
             {/* Divider */}
-            <hr className="border-[#30d0ad]/50"/>
+            <hr className="border-[#30d0ad]/50" />
 
             {/* Author and Date Section */}
-            <div className="flex items-center md:text-xl text-lg ">
+            <div className="flex items-center text-lg md:text-xl ">
               <div className="space-y-0.5">
                 <p className="text-gray-700/90">
-                  Written by <span className="font-medium">OptimCV Career Team</span>
+                  Written by{" "}
+                  <span className="font-medium">OptimCV Career Team</span>
                 </p>
                 <p className="text-gray-700/80">
                   Published on{" "}
