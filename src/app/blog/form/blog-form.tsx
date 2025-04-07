@@ -20,7 +20,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
   const router = useRouter();
-  const {isAuthenticated} = useAuth();
+  const { isAuthenticated } = useAuth();
   const [content, setContent] = useState<string>(blogPost?.content ?? "");
   const [previewImage, setPreviewImage] = useState<string>(
     blogPost?.previewImage ?? "",
@@ -49,7 +49,7 @@ export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
 
   const onSubmit = async (data: BlogPostFormValues) => {
     try {
-      if(!isAuthenticated){
+      if (!isAuthenticated) {
         toast.error("Login to create blog");
         return;
       }
@@ -114,7 +114,6 @@ export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
       setIsImageUploading(false);
     }
   };
-
 
   return (
     <div className="rounded-[10px] bg-white p-4 shadow-1 dark:bg-gray-dark dark:shadow-card ">
@@ -181,6 +180,7 @@ export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
           >
             <option value="job-search">Job Search</option>
             <option value="job-interviews">Job Interviews</option>
+            <option value="ace-the-interview">Ace the interview</option>
             <option value="career-advice">Career Advice</option>
             <option value="resume-help">Resume Help</option>
             <option value="cv-help">CV Help</option>
@@ -288,7 +288,9 @@ export default function BlogPostForm({ blogPost }: { blogPost?: BlogPost }) {
             className="dark:border-form-stroke dark:bg-form-input dark w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:focus:border-primary"
           />
           {errors.readTime && (
-            <p className="mt-1 text-sm text-red-500">{errors.readTime.message}</p>
+            <p className="mt-1 text-sm text-red-500">
+              {errors.readTime.message}
+            </p>
           )}
         </div>
 
