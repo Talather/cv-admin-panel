@@ -9,7 +9,9 @@ const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 const processContent = (content: string) => {
   const dom = new JSDOM(content);
-  const headings = dom.window.document.querySelectorAll("h1, h2");
+  const headings = dom.window.document.querySelectorAll(
+    "h1, h2, h3, h4, h5, h6",
+  );
 
   headings.forEach((heading, index) => {
     if (!heading.id) {
@@ -42,7 +44,7 @@ const ParsedContent = ({ content }: { content: string }) => {
         <ArticleCTABanner />
       </div>
 
-      <div className="col-span-2 lg:block hidden  h-fit top-4 sticky">
+      <div className="sticky top-4 col-span-2  hidden h-fit lg:block">
         <Image
           width={400}
           height={400}

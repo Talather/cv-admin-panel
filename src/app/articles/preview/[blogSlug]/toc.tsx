@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 interface Heading {
@@ -16,7 +16,7 @@ export default function TOC({ content }: { content: string }) {
     const doc = parser.parseFromString(content, "text/html");
 
     const headingElements = Array.from(
-      doc.querySelectorAll("h1, h2"),
+      doc.querySelectorAll("h1, h2, h3, h4, h5, h6"),
     );
 
     const parsedHeadings = headingElements.map((heading, index) => {
@@ -85,7 +85,7 @@ export default function TOC({ content }: { content: string }) {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const fn = () => {
       const style = document.createElement("style");
       style.textContent = `
@@ -94,22 +94,22 @@ export default function TOC({ content }: { content: string }) {
         }
       `;
       document.head.appendChild(style);
-  
+
       return () => document.head.removeChild(style);
     };
     fn();
   }, []);
 
   return (
-    <div className="sticky w-full bg-white shadow-md h-fit top-4 p-4 rounded-md  overflow-y-auto">
+    <div className="sticky top-4 h-fit max-h-[500px] w-full overflow-y-auto rounded-md bg-white p-4  shadow-md">
       <h3 className="mb-2  text-black">Table of Contents</h3>
       <ul className="space-y-2">
         {headings.map((heading) => (
           <li key={heading.id}>
             <button
               type="button"
-              className={`cursor-pointer text-left text-[12px] transition-colors p-1 
-              ${activeId === heading.id ? "rounded-md text-[#30d0ad]  bg-[#30d0ad]/10": "text-[#333333]/80"}
+              className={`cursor-pointer p-1 text-left text-[12px] transition-colors 
+              ${activeId === heading.id ? "rounded-md bg-[#30d0ad]/10  text-[#30d0ad]" : "text-[#333333]/80"}
               `}
               onClick={() => handleClick(heading.id)}
             >
