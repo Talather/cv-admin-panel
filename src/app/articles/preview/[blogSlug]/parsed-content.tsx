@@ -30,7 +30,7 @@ const ParsedContent = ({ content }: { content: string }) => {
   const cleanContent = processContent(content);
 
   return (
-    <div className="relative mx-auto grid-cols-9 gap-8 px-3  pb-16 pt-8 lg:grid">
+    <div className="relative   mx-auto max-w-7xl grid-cols-9 gap-8 px-3  pb-16 pt-8 lg:grid">
       <div className="col-span-2 hidden lg:block ">
         <TOC content={cleanContent} />
       </div>

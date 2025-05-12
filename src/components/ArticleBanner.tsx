@@ -26,8 +26,8 @@ export default function ArticleBanner({
 }: Props) {
   return (
     <section className="mx-auto w-full  bg-gradient-to-b from-[#30d0ad]/20 to-[#fff] py-10  pt-8">
-      <div className="  mx-auto px-2 md:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-3">
+      <div className="mx-auto  max-w-7xl px-2 md:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* Left side - Title and content */}
           <div className="space-y-6 md:col-span-2">
             {/* Title */}
@@ -87,7 +87,7 @@ export default function ArticleBanner({
           </div>
 
           {/* Right side - Image */}
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <div className="relative aspect-square w-full overflow-hidden rounded-lg">
               <Image
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -97,7 +97,7 @@ export default function ArticleBanner({
                 sizes="(max-width: 768px) 100vw, 300px"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
