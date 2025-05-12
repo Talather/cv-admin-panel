@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import type { Timestamp } from "firebase/firestore";
